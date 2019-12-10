@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -22,12 +23,12 @@ public class Cliente {
     private Integer id;
 
     @NotNull
-    @Length(min = 3, max = 100)
+    @Size(min = 3, max = 100)
     private String nome;
 
 
     @NotNull
-    @Length(min = 11, max = 11)
+    @Size(min = 11, max = 11)
     private String cpf;
 
     @NotNull

@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Data
 @Table
@@ -19,7 +20,7 @@ public class Telefone {
     private Integer id;
 
     @NotNull
-    @Length(min = 10, max = 11)
+    @Size(min = 10, max = 11)
     private String numero;
 
 

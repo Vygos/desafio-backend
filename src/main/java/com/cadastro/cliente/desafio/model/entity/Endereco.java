@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table
@@ -19,7 +20,7 @@ public class Endereco {
     private Integer id;
 
     @NotNull
-    @Length(min = 8, max = 8)
+    @Size(min = 8, max = 8)
     private String cep;
 
     @NotNull
