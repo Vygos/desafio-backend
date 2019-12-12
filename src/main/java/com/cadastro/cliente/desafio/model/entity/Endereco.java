@@ -30,9 +30,6 @@ public class Endereco {
     private String bairro;
 
     @NotNull
-    private String cidade;
-
-    @NotNull
     private String uf;
 
     @NotNull

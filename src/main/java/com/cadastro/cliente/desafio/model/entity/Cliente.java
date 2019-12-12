@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -31,8 +30,9 @@ public class Cliente {
     @Size(min = 11, max = 11)
     private String cpf;
 
-    @NotNull
-    private String email;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
+    private List<Email> email;
 
     @JsonIgnoreProperties("cliente")
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "cliente")

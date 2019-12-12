@@ -32,6 +32,7 @@ public class ClienteService {
     public Cliente salvarCliente(Cliente cliente){
         cliente.getEndereco().setCliente(cliente);
         cliente.getTelefone().forEach(telefone -> telefone.setCliente(cliente));
+        cliente.getEmail().forEach(email -> email.setCliente(cliente));
         return clienteRepository.save(cliente);
     }
 
