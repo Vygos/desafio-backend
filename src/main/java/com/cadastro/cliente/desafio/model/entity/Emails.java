@@ -1,7 +1,9 @@
 package com.cadastro.cliente.desafio.model.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -9,8 +11,10 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Email {
+public class Emails {
 
     @Id
     @GeneratedValue

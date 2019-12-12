@@ -20,7 +20,7 @@ public class Telefone {
     private Integer id;
 
     @NotNull
-    @Size(min = 10, max = 11)
+    @Size(min = 10)
     private String numero;
 
 

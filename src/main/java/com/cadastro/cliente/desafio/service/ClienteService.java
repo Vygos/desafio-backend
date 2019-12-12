@@ -31,8 +31,14 @@ public class ClienteService {
     @Transactional(propagation = Propagation.REQUIRED)
     public Cliente salvarCliente(Cliente cliente){
         cliente.getEndereco().setCliente(cliente);
-        cliente.getTelefone().forEach(telefone -> telefone.setCliente(cliente));
-        cliente.getEmail().forEach(email -> email.setCliente(cliente));
+        cliente.getTelefone().forEach(telefone ->{
+            String tel = telefone.getNumero()
+                    .replace("(", "")
+                    .replace(")", "")
+                    .replace(" ", "");
+            telefone.setCliente(cliente);
+        });
+        cliente.getEmails().forEach(email -> email.setCliente(cliente));
         return clienteRepository.save(cliente);
     }
 
